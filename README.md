@@ -1,12 +1,12 @@
-#  Java - Accept Incoming Call Tutorial
+# Java - Accept Incoming Call Tutorial
 
-This project serves as a guide to help you build an application with Persephony. Specifically, the project will:
+This project serves as a guide to help you build an application with FreeClimb. Specifically, the project will:
 
-- Accept an incoming call and respond with a PerCL command   
+- Accept an incoming call and respond with a PerCL command
 
-## Setting up your new app within your Persephony account
+## Setting up your new app within your FreeClimb account
 
-To get started using a persephony account, follow the instructions [here](https://persephony-docs.readme.io/docs/getting-started-with-persephony).
+To get started using a FreeClimb account, follow the instructions [here](https://persephony-docs.readme.io/docs/getting-started-with-persephony).
 
 ## Building and Running the Tutorial
 
@@ -15,4 +15,3 @@ To get started using a persephony account, follow the instructions [here](https:
    ```bash
    $ gradle build && java -Dserver.port=3000 -jar build/libs/gs-spring-boot-0.1.0.jar
    ```
-

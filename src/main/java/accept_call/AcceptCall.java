@@ -1,7 +1,7 @@
 /* 
  * AFTER RUNNING PROJECT WITH COMMAND: 
  * `gradle build && java -Dserver.port=0080 -jar build/libs/gs-spring-boot-0.1.0.jar`
- * CALL NUMBER ASSOCIATED WITH THE ACCOUNT (CONFIGURED IN PERSEPHONY DASHBOARD)
+ * CALL NUMBER ASSOCIATED WITH THE ACCOUNT (CONFIGURED IN FreeClimb DASHBOARD)
  * EXPECT MESSAGE TO BE REPEATED TO YOU: 
  * 'Hello. Thank you for invoking the accept incoming call tutorial. Goodbye.'
 */
@@ -9,14 +9,14 @@
 package main.java.accept_call;
 
 import org.springframework.web.bind.annotation.RestController;
-import com.vailsys.persephony.api.PersyException;
-import com.vailsys.persephony.api.call.CallStatus;
-import com.vailsys.persephony.percl.Hangup;
-import com.vailsys.persephony.percl.Language;
-import com.vailsys.persephony.percl.Pause;
-import com.vailsys.persephony.percl.PerCLScript;
-import com.vailsys.persephony.percl.Say;
-import com.vailsys.persephony.webhooks.StatusCallback;
+import com.vailsys.freeclimb.api.FreeClimbException;
+import com.vailsys.freeclimb.api.call.CallStatus;
+import com.vailsys.freeclimb.percl.Hangup;
+import com.vailsys.freeclimb.percl.Language;
+import com.vailsys.freeclimb.percl.Pause;
+import com.vailsys.freeclimb.percl.PerCLScript;
+import com.vailsys.freeclimb.percl.Say;
+import com.vailsys.freeclimb.webhooks.StatusCallback;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -27,9 +27,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RestController
 public class AcceptCall {
 
-  // To properly communicate with Persephony's API, set your Persephony app's
+  // To properly communicate with FreeClimb's API, set your FreeClimb app's
   // VoiceURL endpoint to '{yourApplicationURL}/InboundCall' for this example
-  // Your Persephony app can be configured in the Persephony Dashboard
+  // Your FreeClimb app can be configured in the FreeClimb Dashboard
   @RequestMapping(value = {
       "/InboundCall" }, method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
   public ResponseEntity<?> inboundCall(@RequestBody String str) {
@@ -39,7 +39,7 @@ public class AcceptCall {
     try {
       // Convert JSON into a call status callback object
       statusCallback = StatusCallback.fromJson(str);
-    } catch (PersyException pe) {
+    } catch (FreeClimbException pe) {
       PerCLScript errorScript = new PerCLScript();
       Say sayError = new Say("There was a problem processing the incoming call.");
       sayError.setLanguage(Language.ENGLISH_US);
