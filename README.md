@@ -1,6 +1,6 @@
 # Java - Accept Incoming Call Tutorial
 
-This project serves as a guide to help you build an application with FreeClimb. Specifically, the project will:
+This project serves as a guide to help you build an application with FreeClimb. View this tutorial on [FreeClimb.com](https://docs.freeclimb.com/docs/accept-an-incoming-call#section-java). Specifically, the project will:
 
 - Accept an incoming call and respond with a PerCL command
 
