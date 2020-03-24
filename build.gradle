@@ -8,7 +8,10 @@
 buildscript {
     repositories {
         mavenCentral()
-        maven { url 'https://jitpack.io' }
+        maven { 
+            name "jitpack"
+            url 'https://jitpack.io' 
+        }
     }
   //Add the dependency
     dependencies {
@@ -36,9 +39,9 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-    compile "org.springframework.boot:spring-boot-starter-web"
-    testCompile "junit:junit"
-    compile 'com.github.FreeClimbAPI:java-sdk:1.0.0'
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    testImplementation "junit:junit"
+    implementation 'com.github.FreeClimbAPI:java-sdk:2.0.0'
 }
 
 sourceSets {
